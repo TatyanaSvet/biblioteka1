@@ -1,0 +1,101 @@
+object Form1: TForm1
+  Left = 276
+  Height = 426
+  Top = 130
+  Width = 792
+  Caption = 'Form1'
+  ClientHeight = 426
+  ClientWidth = 792
+  LCLVersion = '1.8.2.0'
+  object DBGrid1: TDBGrid
+    Left = 16
+    Height = 350
+    Top = 72
+    Width = 600
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 672
+    Height = 25
+    Top = 160
+    Width = 91
+    Caption = 'Вывод данных'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 670
+    Height = 25
+    Top = 200
+    Width = 101
+    Caption = 'Добавить запись'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 672
+    Height = 25
+    Top = 240
+    Width = 107
+    Caption = 'Сохранить запись'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Left = 672
+    Height = 25
+    Top = 280
+    Width = 99
+    Caption = 'Редактировать '
+    OnClick = Button4Click
+    TabOrder = 4
+  end
+  object Button5: TButton
+    Left = 672
+    Height = 25
+    Top = 328
+    Width = 101
+    Caption = 'Удалить запись'
+    OnClick = Button5Click
+    TabOrder = 5
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    OnDataChange = DataSource1DataChange
+    left = 13
+    top = 10
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'lichnayabiblioteka'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = '127.0.0.1'
+    SkipLibraryVersionCheck = False
+    left = 64
+    top = 10
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction1
+    InsertSQL.Strings = (
+      'SELECT * FROM informaciyaoknigax'
+    )
+    Params = <>
+    left = 112
+    top = 10
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL56Connection1
+    left = 160
+    top = 10
+  end
+end
